@@ -472,11 +472,11 @@ API_EXCLUDE = {
 
 # Local dirs deliberately absent from the catalog (walk never warns for these).
 IGNORE_LOCAL = {
-    "hermes-ops",       # OPSEC: maps the local Hermes secret topology (1Password paths,
-                        # provider endpoints, relay topology) — zero visitor value.
-    "unfit-madeline",   # STEER 9/11: names a private CLIENT in a public catalog; repo is
-                        # private (dead link); deployed per-client instance of unfit,
-                        # not Wesley's project. Never re-add; no client names in the catalog.
+    "hermes-ops",       # local operational scripts — internal infrastructure detail,
+                        # deliberately not published.
+    "unfit-madeline",   # per-client deployed instance of unfit, not a project of its
+                        # own; source is private. Client-facing work is never listed
+                        # here — no client-identifying names in the public catalog.
     "zcode-cli-pr",     # PR-staging clone — covered by the zcode-cli contributions row.
     "zcode-cli",        # upstream clone — covered by the zcode-cli contributions row.
     "tmux-axi",         # deliberately absent (see API_EXCLUDE); its local dir still exists,
