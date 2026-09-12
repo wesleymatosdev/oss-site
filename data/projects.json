@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03",
+  "generated": "2026-09-10",
   "source": "GitHub API (wesleymatosdev, wesleymatos-bot) + curated local walk of ~/projects/personal; regenerate with scripts/collect.py",
   "groups": [
     {
@@ -21,7 +21,7 @@
           "description": "Deterministic support code for Hermes's autonomous Kanban supervisor — wakes the supervisor only when the board changes",
           "language": "Shell",
           "url": null,
-          "stars": null,
+          "stars": 0,
           "local": true,
           "category": "agent-infra"
         },
@@ -39,7 +39,7 @@
           "description": "Deterministic, no-LLM categorizer for Hermes session databases — extracts decisions, constraints and blockers with citations",
           "language": "Python",
           "url": null,
-          "stars": null,
+          "stars": 0,
           "local": true,
           "category": "agent-infra"
         },
@@ -48,7 +48,7 @@
           "description": "Personal agent-skill catalog, authored and battle-tested in real agent loops — skills.wesleymatos.dev",
           "language": null,
           "url": "https://github.com/wesleymatosdev/skills",
-          "stars": null,
+          "stars": 0,
           "local": false,
           "category": "agent-infra"
         },
@@ -57,7 +57,7 @@
           "description": "Read-only web dashboard over the local Hermes state DB and memoryos trace",
           "language": "Rust",
           "url": null,
-          "stars": null,
+          "stars": 0,
           "local": true,
           "category": "agent-infra"
         }
@@ -82,7 +82,7 @@
           "description": "AXI-discipline wrapper around the herdr multiplexer CLI",
           "language": "Rust",
           "url": null,
-          "stars": null,
+          "stars": 0,
           "local": true,
           "category": "cli-tool"
         },
@@ -91,7 +91,7 @@
           "description": "Agent-grade model management for Ollama — gc orphaned blobs and aborted pulls, inspect the real store, reclaim dead weight",
           "language": "Rust",
           "url": null,
-          "stars": null,
+          "stars": 0,
           "local": true,
           "category": "cli-tool"
         },
@@ -109,7 +109,7 @@
           "description": "Unattended file transfer to SSH-key-authenticated hosts — no interactive prompts, dry-run default, human + --json output",
           "language": "Rust",
           "url": null,
-          "stars": null,
+          "stars": 0,
           "local": true,
           "category": "cli-tool"
         },
@@ -118,7 +118,7 @@
           "description": "Thin CLI to remote-control one exact live Hermes gateway session from a phone",
           "language": "Rust",
           "url": null,
-          "stars": null,
+          "stars": 0,
           "local": true,
           "category": "cli-tool"
         },
@@ -136,7 +136,7 @@
           "description": "Small Rust CLI that wraps the tmux multiplexer with AXI discipline",
           "language": "Rust",
           "url": null,
-          "stars": null,
+          "stars": 0,
           "local": true,
           "category": "cli-tool"
         },
@@ -154,7 +154,7 @@
           "description": "Cross-platform screen recorder in Rust using xcap — records every display to a separate H.264 MP4 via FFmpeg",
           "language": "Rust",
           "url": null,
-          "stars": null,
+          "stars": 0,
           "local": true,
           "category": "cli-tool"
         }
@@ -335,7 +335,7 @@
           "description": "Backlog spec for a Rust MEMORY_VERBS v1 server, measured against a running gbrain instance",
           "language": "Markdown",
           "url": null,
-          "stars": null,
+          "stars": 0,
           "local": true,
           "category": "experiment"
         },

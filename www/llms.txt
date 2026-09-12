@@ -1,6 +1,6 @@
 # wesley's open source
 > https://oss.wesleymatos.dev — catalog of Wesley Matos's open-source work.
-> 72 projects, generated 2026-09-03. Groups: agent infrastructure, cli tools, libraries, benchmarks, websites & apps, experiments & learning, maintained forks, contributions.
+> 72 projects, generated 2026-09-10. Groups: agent infrastructure, cli tools, libraries, benchmarks, websites & apps, experiments & learning, maintained forks, contributions.
 
 ## Agent infrastructure
 
