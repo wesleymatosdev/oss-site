@@ -100,7 +100,7 @@ window.OSS_PROJECTS = {
         },
         {
           "name": "skills",
-          "description": "Personal agent-skill catalog, authored and battle-tested in real agent loops — skills.wesleymatos.dev",
+          "description": "Personal agent-skill catalog — powers skills.wesleymatos.dev; catalog.json in the agentskills.io schema with per-skill SHA-256 digests",
           "language": null,
           "url": "https://github.com/wesleymatosdev/skills",
           "stars": 0,
@@ -257,7 +257,7 @@ window.OSS_PROJECTS = {
         },
         {
           "name": "unfit-rs",
-          "description": "unf.it review tool — Rust rewrite: local-first visual review hub for iterating on websites with element-scoped feedback",
+          "description": "Proof of concept, unmaintained — local-first visual review hub in Rust/axum (unf.it); the README recommends Lavish instead",
           "language": "Rust",
           "url": "https://github.com/wesleymatosdev/unfit-rs",
           "stars": 0,
@@ -272,7 +272,7 @@ window.OSS_PROJECTS = {
         },
         {
           "name": "xcap-recorder",
-          "description": "Cross-platform screen recorder in Rust using xcap — records every display to a separate H.264 MP4 via FFmpeg",
+          "description": "Screen recorder in Rust using xcap — records every connected display to a separate H.264 MP4 via FFmpeg",
           "language": "Rust",
           "url": "https://github.com/wesleymatosdev/xcap-recorder",
           "stars": 0,
@@ -1132,7 +1132,7 @@ window.OSS_PROJECTS = {
       "projects": [
         {
           "name": "colibri",
-          "description": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk",
+          "description": "Fork of JustVugg/colibri — frontier MoE models on commodity hardware, pure C, experts streamed from disk (upstream project; no local changes yet)",
           "language": "C",
           "url": "https://github.com/wesleymatos-bot/colibri",
           "stars": 0,
@@ -1147,7 +1147,7 @@ window.OSS_PROJECTS = {
         },
         {
           "name": "gnhf",
-          "description": "Before I go to bed, I tell my agents: good night, have fun",
+          "description": "Fork of kunchenguid/gnhf — \"good night, have fun\": scheduled overnight agent runs (upstream project; no local changes yet)",
           "language": null,
           "url": "https://github.com/wesleymatos-bot/gnhf",
           "stars": 0,

@@ -10,7 +10,7 @@ auto-permissions — local only (coming soon) — ZCode plugin adding a Claude-C
 fleet-bus — local only (coming soon) — Low-latency push transport for the agent fleet — embedded NATS + JetStream, replayable history, one zero-dependency Go binary (v0.2)
 hermes-classifier-mode — https://github.com/wesleymatosdev/hermes-classifier-mode — Claude Code's auto permission mode for Hermes Agent — a local LLM classifier reviews every shell command before it runs (Ollama, on-device)
 session-categorizer — https://github.com/wesleymatosdev/session-categorizer — Deterministic, no-LLM categorizer for Hermes session databases — extracts decisions, constraints and blockers with citations
-skills — https://github.com/wesleymatosdev/skills — Personal agent-skill catalog, authored and battle-tested in real agent loops — skills.wesleymatos.dev
+skills — https://github.com/wesleymatosdev/skills — Personal agent-skill catalog — powers skills.wesleymatos.dev; catalog.json in the agentskills.io schema with per-skill SHA-256 digests
 usage-dash — https://github.com/wesleymatosdev/usage-dash — Read-only web dashboard over the local Hermes state DB and memoryos trace
 
 ## CLI tools
@@ -23,8 +23,8 @@ scp-axi — https://github.com/wesleymatosdev/scp-axi — Unattended file transf
 session-rc — https://github.com/wesleymatosdev/session-rc — Thin CLI to remote-control one exact live Hermes gateway session from a phone
 set-all-gists-to-private — https://github.com/wesleymatosdev/set-all-gists-to-private — Repository to set all my gists to private but this features isn't supported by github anymore :/
 terminal-axi — https://github.com/wesleymatosdev/terminal-axi — Agent-ergonomic terminal session control — one Rust binary, one JSON contract, no daemon; run foreground or spawn detached and poll
-unfit-rs — https://github.com/wesleymatosdev/unfit-rs — unf.it review tool — Rust rewrite: local-first visual review hub for iterating on websites with element-scoped feedback
-xcap-recorder — https://github.com/wesleymatosdev/xcap-recorder — Cross-platform screen recorder in Rust using xcap — records every display to a separate H.264 MP4 via FFmpeg
+unfit-rs — https://github.com/wesleymatosdev/unfit-rs — Proof of concept, unmaintained — local-first visual review hub in Rust/axum (unf.it); the README recommends Lavish instead
+xcap-recorder — https://github.com/wesleymatosdev/xcap-recorder — Screen recorder in Rust using xcap — records every connected display to a separate H.264 MP4 via FFmpeg
 zcode-axi — https://github.com/wesleymatosdev/zcode-axi — Machine-friendly control plane around the zcode runtime — deterministic parseable output, documented exit-code contract, never prompts
 
 ## Libraries
@@ -94,8 +94,8 @@ what-is-the-weekday — https://github.com/wesleymatosdev/what-is-the-weekday �
 
 ## Forks
 
-colibri — https://github.com/wesleymatos-bot/colibri — Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk
-gnhf — https://github.com/wesleymatos-bot/gnhf — Before I go to bed, I tell my agents: good night, have fun
+colibri — https://github.com/wesleymatos-bot/colibri — Fork of JustVugg/colibri — frontier MoE models on commodity hardware, pure C, experts streamed from disk (upstream project; no local changes yet)
+gnhf — https://github.com/wesleymatos-bot/gnhf — Fork of kunchenguid/gnhf — "good night, have fun": scheduled overnight agent runs (upstream project; no local changes yet)
 
 ## Contributions
 

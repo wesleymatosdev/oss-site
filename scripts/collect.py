@@ -62,7 +62,7 @@ CURATED = {
     "unfit-rs": {
         "category": "cli-tool", "language": "Rust",
         "url": "https://github.com/wesleymatosdev/unfit-rs.git", "public": True,
-        "description": "unf.it review tool — Rust rewrite: local-first visual review hub for iterating on websites with element-scoped feedback",
+        "description": "Proof of concept, unmaintained — local-first visual review hub in Rust/axum (unf.it); the README recommends Lavish instead",
     },
     "ollama-axi": {
         "category": "cli-tool", "language": "Rust", "url": None, "public": True,
@@ -100,7 +100,7 @@ CURATED = {
         "category": "agent-infra", "language": None,
         "url": "https://github.com/wesleymatosdev/skills.git", "public": True,
         "site": "https://skills.wesleymatos.dev",
-        "description": "Personal agent-skill catalog, authored and battle-tested in real agent loops — skills.wesleymatos.dev",
+        "description": "Personal agent-skill catalog — powers skills.wesleymatos.dev; catalog.json in the agentskills.io schema with per-skill SHA-256 digests",  # drops unverifiable "battle-tested" claim [SS §6]
     },
     "hermes-agent-rs": {
         "category": "library", "language": "Rust",
@@ -124,7 +124,7 @@ CURATED = {
     },
     "xcap-recorder": {
         "category": "cli-tool", "language": "Rust", "url": None, "public": True,
-        "description": "Cross-platform screen recorder in Rust using xcap — records every display to a separate H.264 MP4 via FFmpeg",
+        "description": "Screen recorder in Rust using xcap — records every connected display to a separate H.264 MP4 via FFmpeg",          # was "Cross-platform …"; encoder is macOS-only [SS §6]
     },
     "website": {
         "category": "website", "language": "HTML",
@@ -190,12 +190,12 @@ CURATED = {
     "colibri": {
         "category": "maintained-forks", "language": "C",
         "url": "https://github.com/wesleymatos-bot/colibri.git", "public": True,
-        "description": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk",
+        "description": "Fork of JustVugg/colibri — frontier MoE models on commodity hardware, pure C, experts streamed from disk (upstream project; no local changes yet)",
     },
     "gnhf": {
         "category": "maintained-forks", "language": None,
         "url": "https://github.com/wesleymatos-bot/gnhf.git", "public": True,
-        "description": "Before I go to bed, I tell my agents: good night, have fun",
+        "description": "Fork of kunchenguid/gnhf — \"good night, have fun\": scheduled overnight agent runs (upstream project; no local changes yet)",
     },
     "fleet-bus": {
         "category": "agent-infra", "language": "Go", "url": None, "public": False,
