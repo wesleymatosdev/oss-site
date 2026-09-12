@@ -18,18 +18,56 @@ CNAME                custom domain: oss.wesleymatos.dev
 
 The site renders whatever is in `data/projects.json` (copied verbatim into
 `www/projects.js` at generation time so the page needs no `fetch()` and previews
-over `file://`). Each project entry carries: `name`, `description`, `language`,
-`url` (GitHub remote, or `null` for local-only work), `stars`, `local`, and
-`category` — which is one of the display groups:
+over `file://`). Each project entry carries, in this key order:
+
+| field | meaning |
+|---|---|
+| `name` | catalog name (repo name, or the curated alias) |
+| `description` | one-line summary — factual, third-person, true of the repo today |
+| `language` | primary language, or `null` |
+| `url` | GitHub remote (`.git` stripped), or `null` for local-only work |
+| `stars` | build-time star count from the API; `null` when the repo is not on the API |
+| `local` | true = no public repo to link (renders as a dashed **soon** card) |
+| `public` | false = the repo is private or absent — renderers never link the url |
+| `site` | live URL to link instead of the repo (website, blog, demo, skills) |
+| `full` | true = render as a full brief section rather than a compact row |
+| `purpose` | goals/what-it-does paragraph (full sections only, else `null`) |
+| `state` | short honest status label, e.g. `working`, `PoC — unmaintained` |
+| `state_note` | optional caveat/evidence line shown next to the state badge |
+| `category` | one of the display groups |
+
+Curated rows whose repo went public after being added are healed at generation
+time: the API match backfills `url`, `stars`, `local=false`, `public=true`.
+Private repos stay unlinked — `www/llms.txt` shows `source not public` for
+them, and entries with a `site` show the live URL instead.
+
+`category` is one of:
 
 - `agent-infra` — tools around Hermes, local models, and the agent loop
 - `cli-tool` — the axi family and other CLIs
 - `library`, `benchmark`, `website`, `experiment`
-- `maintained-forks` — forks kept alive with real work (colibri, gnhf)
-- `contributions` — work toward upstreams (memory-os, deskflow)
+- `maintained-forks` — forks of upstream projects, published as-is
+- `contributions` — work toward upstreams (memory-os, zcode-cli, deskflow)
 
-Local-only repos (no GitHub remote yet) render as dashed cards marked **soon**
-instead of a dead link.
+Projects marked `full` render as stacked full-width sections with their
+`purpose`/`state`/`state_note` copy; the rest stay compact grid rows. Both
+shapes share the `card` class, so the live filter covers both.
+
+## Shared site nav
+
+`www/index.html` carries the wesleymatos.dev nav inside `wm-nav:begin/end`
+sentinels (CSS likewise in `www/css/style.css`, plus oss-specific `:root`
+token mapping outside the sentinels). Regenerate the HTML block across all
+four hand-written sites by hand with:
+
+```sh
+python3 scripts/sync-nav.py           # with the Open Source link
+python3 scripts/sync-nav.py --no-oss  # pre-DNS: omit the oss.wesleymatos.dev link
+```
+
+The script only maintains existing sentinel blocks; first installation per
+site is a manual edit. The blog is configured via `menu:` in its
+`marmite.yaml` instead — the script prints the equivalent YAML as a reminder.
 
 ## Regenerating the data
 

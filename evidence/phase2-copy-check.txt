@@ -1,0 +1,24 @@
+plan §3.2 entries: 21; collect.py FULL_SECTIONS: 21; data full=true: 21
+  ai-usage-optimizer           state='active' note='-'
+  anti-babysitting-pipeline    state='working' note='-'
+  auto-permissions             state='working' note='Not published yet — repository is local-only; this entry lin'
+  aux-bench                    state='working PoC' note='14 result artifacts from real runs are committed under resul'
+  console-art                  state='working' note='Source lives in a private repo, so there is no link here; th'
+  fleet-bus                    state='working PoC — active' note='Not published yet — repository is local-only; this entry lin'
+  herdr-axi                    state='working' note='14 tests; brief derived from the code and Cargo.toml — the r'
+  hermes-agent-rs              state='v0.1 — hermes-client only' note='-'
+  hermes-classifier-mode       state='working' note="Accuracy and latency figures on the README are the project's"
+  ollama-axi                   state='working' note='13 inline tests.'
+  pages-proxy                  state='working' note='-'
+  scp-axi                      state='working' note='23 tests plus CLI integration tests; the README documents th'
+  session-categorizer          state='working' note='39 test functions across 8 files.'
+  session-rc                   state='v0 — working' note='The Tailscale path is documented in the README as not yet wi'
+  skills                       state='working' note='-'
+  terminal-axi                 state='working' note='-'
+  unfit-rs                     state='PoC — unmaintained' note='Superseded; the README recommends Lavish instead.'
+  usage-dash                   state='working' note='22 unit tests; read-only access verified in src/metrics.rs.'
+  website                      state='working' note='-'
+  xcap-recorder                state='working — macOS only' note="The FFmpeg encoder uses macOS's VideoToolbox (h264_videotool"
+  zcode-axi                    state='active' note='-'
+
+RESULT: ALL 21 COPY MATCH PLAN §3.2 VERBATIM

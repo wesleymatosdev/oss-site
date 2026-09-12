@@ -1,0 +1,18 @@
+screenshot: evidence/phase4-viewport.png
+
+=== RESULTS ===
+PASS: exactly one nav.site-nav — {"count":1,"parentTag":"BODY","inCatalog":false,"inHeader":false,"links":["Home","Blog","Open Source","Skills","Demos"],"hrefs":["https://wesleymatos.dev/","https://blog.wesleymatos.dev/","https://oss.wesleymatos.dev/","https://skills.wesleymatos.dev/","https://demo.wesleymatos.dev/"],"ariaCurrentCount":1,"ariaCurrentHref":"https://oss.wesleymatos.dev/","beforeCatalog":true}
+PASS: nav is a direct child of <body> — BODY
+PASS: nav not inside #catalog or .site-header
+PASS: nav has 5 links — ["Home","Blog","Open Source","Skills","Demos"]
+PASS: exactly one aria-current, pointing at oss.wesleymatos.dev — "https://oss.wesleymatos.dev/"
+PASS: nav sits above #catalog in DOM order
+PASS: .back-link absent from DOM
+PASS: nav fixed top-right (top≈22px, right≈26px), z above .page — {"pos":"fixed","top":22,"right":26,"z":3,"pageZ":1,"abovePage":true,"display":"flex"}
+PASS: no-JS: nav still renders with 5 links (static markup); catalog empty is pre-existing — {"navPresent":true,"links":5,"catalogEmpty":true}
+
+TOTAL: 9/9 passed
+PASS: nav fixed top-right (top≈22px, right≈26px), z above .page — {"pos":"fixed","top":22,"right":26,"z":3,"pageZ":1,"abovePage":true,"display":"flex"}
+PASS: no-JS: nav still renders with 5 links (static markup); catalog empty is pre-existing — {"navPresent":true,"links":5,"catalogEmpty":true}
+
+TOTAL: 9/9 passed
