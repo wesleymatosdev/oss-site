@@ -9,7 +9,7 @@ Wesley's open-source work. Sits next to the main site at
 ```
 data/projects.json   source of truth — every project, grouped and described
 scripts/collect.py   regenerates the data files (see below)
-www/                 the static site — no build step, no npm, no CDNs
+www/                 static site — no build step or npm
 CNAME                custom domain: oss.wesleymatos.dev
 .github/workflows/deploy.yml   deploys www/ to GitHub Pages on push to main
 ```
@@ -55,19 +55,14 @@ shapes share the `card` class, so the live filter covers both.
 
 ## Shared site nav
 
-`www/index.html` carries the wesleymatos.dev nav inside `wm-nav:begin/end`
-sentinels (CSS likewise in `www/css/style.css`, plus oss-specific `:root`
-token mapping outside the sentinels). Regenerate the HTML block across all
-four hand-written sites by hand with:
+`www/index.html` loads the shared component immediately before `</body>`:
 
-```sh
-python3 scripts/sync-nav.py           # with the Open Source link
-python3 scripts/sync-nav.py --no-oss  # pre-DNS: omit the oss.wesleymatos.dev link
+```html
+<script src="https://wesleymatos.dev/wm-nav.js" data-current="Open Source"></script>
 ```
 
-The script only maintains existing sentinel blocks; first installation per
-site is a manual edit. The blog is configured via `menu:` in its
-`marmite.yaml` instead — the script prints the equivalent YAML as a reminder.
+The component owns the navbar markup and styles; pass `data-current="Open Source"`
+to mark the OSS link as the current page. Do not add local `wm-nav` markup or CSS.
 
 ## Regenerating the data
 
