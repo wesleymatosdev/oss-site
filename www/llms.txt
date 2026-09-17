@@ -1,32 +1,35 @@
 # wesley's open source
 > https://oss.wesleymatos.dev — catalog of Wesley Matos's open-source work.
-> 72 projects, generated 2026-09-03. Groups: agent infrastructure, cli tools, libraries, benchmarks, websites & apps, experiments & learning, maintained forks, contributions.
+> 77 projects, generated 2026-09-11. Groups: agent infrastructure, cli tools, libraries, benchmarks, websites & apps, experiments & learning, forks, contributions.
 
 ## Agent infrastructure
 
 ai-usage-optimizer — https://github.com/wesleymatosdev/ai-usage-optimizer — Local-first usage tracker for AI subscriptions — polls real usage signals, Telegram alerts, recommends the provider with headroom
-anti-babysitting-pipeline — local only (coming soon) — Deterministic support code for Hermes's autonomous Kanban supervisor — wakes the supervisor only when the board changes
+anti-babysitting-pipeline — https://github.com/wesleymatosdev/anti-babysitting-pipeline — Deterministic support code for Hermes's autonomous Kanban supervisor — wakes the supervisor only when the board changes
+auto-permissions — local only (coming soon) — ZCode plugin adding a Claude-Code-style auto permission classifier — safe actions auto-approved, dangerous ones denied with a reason
+fleet-bus — local only (coming soon) — Low-latency push transport for the agent fleet — embedded NATS + JetStream, replayable history, one zero-dependency Go binary (v0.2)
 hermes-classifier-mode — https://github.com/wesleymatosdev/hermes-classifier-mode — Claude Code's auto permission mode for Hermes Agent — a local LLM classifier reviews every shell command before it runs (Ollama, on-device)
-session-categorizer — local only (coming soon) — Deterministic, no-LLM categorizer for Hermes session databases — extracts decisions, constraints and blockers with citations
-skills — https://github.com/wesleymatosdev/skills — Personal agent-skill catalog, authored and battle-tested in real agent loops — skills.wesleymatos.dev
-usage-dash — local only (coming soon) — Read-only web dashboard over the local Hermes state DB and memoryos trace
+session-categorizer — https://github.com/wesleymatosdev/session-categorizer — Deterministic, no-LLM categorizer for Hermes session databases — extracts decisions, constraints and blockers with citations
+skills — https://github.com/wesleymatosdev/skills — Personal agent-skill catalog — powers skills.wesleymatos.dev; catalog.json in the agentskills.io schema with per-skill SHA-256 digests
+usage-dash — https://github.com/wesleymatosdev/usage-dash — Read-only web dashboard over the local Hermes state DB and memoryos trace
 
 ## CLI tools
 
 block-ads-huawei-router — https://github.com/wesleymatosdev/block-ads-huawei-router — Just a simple app to fill all blocked IPs on huawei router
-herdr-axi — local only (coming soon) — AXI-discipline wrapper around the herdr multiplexer CLI
-ollama-axi — local only (coming soon) — Agent-grade model management for Ollama — gc orphaned blobs and aborted pulls, inspect the real store, reclaim dead weight
+herdr-axi — https://github.com/wesleymatosdev/herdr-axi — AXI-discipline wrapper around the herdr multiplexer CLI
+ollama-axi — https://github.com/wesleymatosdev/ollama-axi — Agent-grade model management for Ollama — gc orphaned blobs and aborted pulls, inspect the real store, reclaim dead weight
 pages-proxy — https://github.com/wesleymatosdev/pages-proxy — Tiny Rust Cloudflare Worker that reverse-proxies a custom domain/subdomain to a Cloudflare Pages project — no DNS edits needed
-scp-axi — local only (coming soon) — Unattended file transfer to SSH-key-authenticated hosts — no interactive prompts, dry-run default, human + --json output
-session-rc — local only (coming soon) — Thin CLI to remote-control one exact live Hermes gateway session from a phone
+scp-axi — https://github.com/wesleymatosdev/scp-axi — Unattended file transfer to SSH-key-authenticated hosts — no interactive prompts, dry-run default, human + --json output
+session-rc — https://github.com/wesleymatosdev/session-rc — Thin CLI to remote-control one exact live Hermes gateway session from a phone
 set-all-gists-to-private — https://github.com/wesleymatosdev/set-all-gists-to-private — Repository to set all my gists to private but this features isn't supported by github anymore :/
-tmux-axi — local only (coming soon) — Small Rust CLI that wraps the tmux multiplexer with AXI discipline
-unfit-rs — https://github.com/wesleymatosdev/unfit-rs — unf.it review tool — Rust rewrite: local-first visual review hub for iterating on websites with element-scoped feedback
-xcap-recorder — local only (coming soon) — Cross-platform screen recorder in Rust using xcap — records every display to a separate H.264 MP4 via FFmpeg
+terminal-axi — https://github.com/wesleymatosdev/terminal-axi — Agent-ergonomic terminal session control — one Rust binary, one JSON contract, no daemon; run foreground or spawn detached and poll
+unfit-rs — https://github.com/wesleymatosdev/unfit-rs — Proof of concept, unmaintained — local-first visual review hub in Rust/axum (unf.it); the README recommends Lavish instead
+xcap-recorder — https://github.com/wesleymatosdev/xcap-recorder — Screen recorder in Rust using xcap — records every connected display to a separate H.264 MP4 via FFmpeg
+zcode-axi — https://github.com/wesleymatosdev/zcode-axi — Machine-friendly control plane around the zcode runtime — deterministic parseable output, documented exit-code contract, never prompts
 
 ## Libraries
 
-console-art — https://github.com/wesleymatosdev/console-art — Render colored ASCII art safely in the browser console — one console.log per row, bounded %c runs
+console-art — source not public — Render colored ASCII art safely in the browser console — one console.log per row, bounded %c runs
 deno-data-structures — https://github.com/wesleymatosdev/deno-data-structures — Data structures training repo. It's meant to showcase data structures implementations. Tests can be ran using `deno test`
 hermes-agent-rs — https://github.com/wesleymatosdev/hermes-agent-rs — Composable Rust libraries and agent tools for integrating with Hermes Agent — typed API client, HMAC webhooks, orchestration
 sort-numbers — https://github.com/wesleymatosdev/sort-numbers — Simple library to sort numbers in go
@@ -38,12 +41,13 @@ aux-bench — https://github.com/wesleymatosdev/aux-bench — Benchmark local Ol
 ## Websites & apps
 
 bela-portfolio — https://github.com/wesleymatosdev/bela-portfolio — 
-blog — local only (coming soon) — Blog at blog.wesleymatos.dev — notes on code and things I'm building (Marmite)
-demo — https://github.com/wesleymatosdev/demo — Demos page for wesleymatos.dev
+blog — https://blog.wesleymatos.dev — Blog at blog.wesleymatos.dev — notes on code and things I'm building (Marmite)
+demo — https://demo.wesleymatos.dev — Demos page for wesleymatos.dev
+oss-site — https://github.com/wesleymatosdev/oss-site — This catalog — source for oss.wesleymatos.dev; a hand-written static page fed by scripts/collect.py
 simulador-de-prova — https://github.com/wesleymatosdev/simulador-de-prova — Exam simulator
-unfit — https://github.com/wesleymatosdev/unfit — LAN-only review hub for visual artifacts — click-to-annotate DOM elements, queue comments, durable local SQLite storage
-unfit-madeline — https://github.com/wesleymatosdev/unfit-madeline — unfit review-hub instance pairing a Python server with unfit-sdk.js
-website — https://github.com/wesleymatosdev/website — Personal site at wesleymatos.dev — dark nebula theme with canvas starfield
+unfit — source not public — LAN-only review hub for visual artifacts — click-to-annotate DOM elements, queue comments, durable local SQLite storage
+website — https://wesleymatos.dev — Personal site at wesleymatos.dev — dark nebula theme with canvas starfield
+wm-brand — local only (coming soon) — Design brief, tokens, and artifact previews for the wesleymatos.dev property family (HOUSE-STYLE.md defines the nebula language this site follows)
 
 ## Experiments & learning
 
@@ -51,7 +55,7 @@ advent-of-code-2023 — https://github.com/wesleymatosdev/advent-of-code-2023 �
 aoc-2024-in-deno — https://github.com/wesleymatosdev/aoc-2024-in-deno — Advent of Code 2024 solutions (in Deno)
 boilerplate — https://github.com/wesleymatosdev/boilerplate — 
 bookstore-api — https://github.com/wesleymatosdev/bookstore-api — Books management API to training go skills
-brainrs — local only (coming soon) — Backlog spec for a Rust MEMORY_VERBS v1 server, measured against a running gbrain instance
+brainrs — https://github.com/wesleymatosdev/brainrs — Backlog spec for a Rust MEMORY_VERBS v1 server, measured against a running gbrain instance
 codespaces-test — https://github.com/wesleymatosdev/codespaces-test — Quick node project template for demoing Codespaces
 data-structures-and-algorithms — https://github.com/wesleymatosdev/data-structures-and-algorithms — DSA training
 drag-motion-spec-poc — local only (coming soon) — Drag-motion spec proof-of-concept with Playwright-verified proofs
@@ -88,12 +92,13 @@ wasm-example — https://github.com/wesleymatosdev/wasm-example — Example inte
 web-rtc-video-call — https://github.com/wesleymatosdev/web-rtc-video-call — 
 what-is-the-weekday — https://github.com/wesleymatosdev/what-is-the-weekday — Given a date, the method whatIsTheWeekday will return the equivalent weekday
 
-## Maintained forks
+## Forks
 
-colibri — https://github.com/wesleymatos-bot/colibri — Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk
-gnhf — https://github.com/wesleymatos-bot/gnhf — Before I go to bed, I tell my agents: good night, have fun
+colibri — https://github.com/wesleymatos-bot/colibri — Fork of JustVugg/colibri — frontier MoE models on commodity hardware, pure C, experts streamed from disk (upstream project; no local changes yet)
+gnhf — https://github.com/wesleymatos-bot/gnhf — Fork of kunchenguid/gnhf — "good night, have fun": scheduled overnight agent runs (upstream project; no local changes yet)
 
 ## Contributions
 
 deskflow-pentesting — https://github.com/wesleymatosdev/deskflow-pentesting — Repo to implement deskflow/deskflow#8010
 memory-os — https://github.com/ClaudioDrews/memory-os — Hermes Agent memory operating system — permanent local memory, provider-agnostic, with semantic search across conversations
+zcode-cli — https://github.com/kingsword09/zcode-cli — Upstream zcode-cli — number-key quick-select for choice dialogs merged via PR #136; auto permission classifier under review as PR #137

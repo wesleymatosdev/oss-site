@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03",
+  "generated": "2026-09-11",
   "source": "GitHub API (wesleymatosdev, wesleymatos-bot) + curated local walk of ~/projects/personal; regenerate with scripts/collect.py",
   "groups": [
     {
@@ -14,15 +14,57 @@
           "url": "https://github.com/wesleymatosdev/ai-usage-optimizer",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Tracks real usage signals from the AI providers that expose them and accepts manual observations for the ones that don't. On threshold transitions it fires Telegram alerts and recommends which provider has headroom for the next task. Local-first: provider keys are read from the local environment and never leave it.",
+          "state": "active",
+          "state_note": null,
           "category": "agent-infra"
         },
         {
           "name": "anti-babysitting-pipeline",
           "description": "Deterministic support code for Hermes's autonomous Kanban supervisor — wakes the supervisor only when the board changes",
           "language": "Shell",
+          "url": "https://github.com/wesleymatosdev/anti-babysitting-pipeline",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Support code for Hermes's autonomous Kanban supervisor. A read-only SQLite monitor snapshots the board's cursor and status, so a cron supervisor wakes only when the board actually changes — no polling loop babysitting the queue.",
+          "state": "working",
+          "state_note": null,
+          "category": "agent-infra"
+        },
+        {
+          "name": "auto-permissions",
+          "description": "ZCode plugin adding a Claude-Code-style auto permission classifier — safe actions auto-approved, dangerous ones denied with a reason",
+          "language": "TypeScript",
           "url": null,
           "stars": null,
           "local": true,
+          "public": false,
+          "site": null,
+          "full": true,
+          "purpose": "A ZCode plugin that adds a Claude-Code-style auto permission classifier: known-safe actions are approved automatically, dangerous ones are denied with a reason, and everything else goes to the normal human dialog. One hook on PermissionRequest — it can never widen yolo mode or override an explicit deny rule. The Hermes sibling is hermes-classifier-mode; the same idea is under review upstream as kingsword09/zcode-cli PR #137.",
+          "state": "working",
+          "state_note": "Not published yet — repository is local-only; this entry links up automatically once the repo is pushed.",
+          "category": "agent-infra"
+        },
+        {
+          "name": "fleet-bus",
+          "description": "Low-latency push transport for the agent fleet — embedded NATS + JetStream, replayable history, one zero-dependency Go binary (v0.2)",
+          "language": "Go",
+          "url": null,
+          "stars": null,
+          "local": true,
+          "public": false,
+          "site": null,
+          "full": true,
+          "purpose": "Low-latency push transport for the agent fleet: a worker finishing means the coordinator knows in milliseconds, and any subscriber — including one born after the events it cares about — can replay the history. v0.2 moves the default path onto an embedded NATS server with JetStream while staying one small zero-dependency Go binary.",
+          "state": "working PoC — active",
+          "state_note": "Not published yet — repository is local-only; this entry links up automatically once the repo is pushed.",
           "category": "agent-infra"
         },
         {
@@ -32,33 +74,57 @@
           "url": "https://github.com/wesleymatosdev/hermes-classifier-mode",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "A local LLM classifier reviews every shell command and execute_code script before it runs inside Hermes Agent — autonomy with a second model judging each action, instead of approval prompts or skipping all checks. The ZCode sibling of auto-permissions; the same idea is proposed upstream as kingsword09/zcode-cli PR #137.",
+          "state": "working",
+          "state_note": "Accuracy and latency figures on the README are the project's own benchmark self-report; no artifact is linked.",
           "category": "agent-infra"
         },
         {
           "name": "session-categorizer",
           "description": "Deterministic, no-LLM categorizer for Hermes session databases — extracts decisions, constraints and blockers with citations",
           "language": "Python",
-          "url": null,
-          "stars": null,
-          "local": true,
+          "url": "https://github.com/wesleymatosdev/session-categorizer",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Mines Hermes session databases with no model in the loop: deterministic extraction of decisions, corrections, constraints, requests, blockers, outcomes, open questions, ideas, and references — every extract carrying a citation back to the source conversation.",
+          "state": "working",
+          "state_note": "39 test functions across 8 files.",
           "category": "agent-infra"
         },
         {
           "name": "skills",
-          "description": "Personal agent-skill catalog, authored and battle-tested in real agent loops — skills.wesleymatos.dev",
+          "description": "Personal agent-skill catalog — powers skills.wesleymatos.dev; catalog.json in the agentskills.io schema with per-skill SHA-256 digests",
           "language": null,
           "url": "https://github.com/wesleymatosdev/skills",
-          "stars": null,
+          "stars": 0,
           "local": false,
+          "public": true,
+          "site": "https://skills.wesleymatos.dev",
+          "full": true,
+          "purpose": "The agent-skill catalog behind skills.wesleymatos.dev: three skills with a catalog.json in the agentskills.io schema and per-skill SHA-256 digests in versions.json.",
+          "state": "working",
+          "state_note": null,
           "category": "agent-infra"
         },
         {
           "name": "usage-dash",
           "description": "Read-only web dashboard over the local Hermes state DB and memoryos trace",
           "language": "Rust",
-          "url": null,
-          "stars": null,
-          "local": true,
+          "url": "https://github.com/wesleymatosdev/usage-dash",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "A local, single-binary dashboard over the Hermes state DB: sessions, model usage, provider load, and cost, straight out of SQLite. Read-only by construction — the database opens in SQLite read-only mode; no agents polled, no side effects.",
+          "state": "working",
+          "state_note": "22 unit tests; read-only access verified in src/metrics.rs.",
           "category": "agent-infra"
         }
       ]
@@ -75,24 +141,42 @@
           "url": "https://github.com/wesleymatosdev/block-ads-huawei-router",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "cli-tool"
         },
         {
           "name": "herdr-axi",
           "description": "AXI-discipline wrapper around the herdr multiplexer CLI",
           "language": "Rust",
-          "url": null,
-          "stars": null,
-          "local": true,
+          "url": "https://github.com/wesleymatosdev/herdr-axi",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "AXI-discipline wrapper around the herdr agent multiplexer: list the live agents, dispatch tasks to them, and wait until they reach a settled state — machine-parsable output throughout, built to be driven by other agents and scripts.",
+          "state": "working",
+          "state_note": "14 tests; brief derived from the code and Cargo.toml — the repo has no README yet.",
           "category": "cli-tool"
         },
         {
           "name": "ollama-axi",
           "description": "Agent-grade model management for Ollama — gc orphaned blobs and aborted pulls, inspect the real store, reclaim dead weight",
           "language": "Rust",
-          "url": null,
-          "stars": null,
-          "local": true,
+          "url": "https://github.com/wesleymatosdev/ollama-axi",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Maintenance CLI for a real Ollama store: `ollama rm` leaves blobs behind, aborted pulls leave -partial files, and Ollama ships no cleanup command. This tool reads the actual store and reclaims the dead weight — garbage collection with a dry-run default, plus disk/list/ps inspection.",
+          "state": "working",
+          "state_note": "13 inline tests.",
           "category": "cli-tool"
         },
         {
@@ -102,24 +186,42 @@
           "url": "https://github.com/wesleymatosdev/pages-proxy",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "A tiny Rust Cloudflare Worker that reverse-proxies a custom domain or subdomain to a Cloudflare Pages project, preserving path and query string. It serves demo.wesleymatos.dev.",
+          "state": "working",
+          "state_note": null,
           "category": "cli-tool"
         },
         {
           "name": "scp-axi",
           "description": "Unattended file transfer to SSH-key-authenticated hosts — no interactive prompts, dry-run default, human + --json output",
           "language": "Rust",
-          "url": null,
-          "stars": null,
-          "local": true,
+          "url": "https://github.com/wesleymatosdev/scp-axi",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Unattended file transfer to SSH-key-authenticated hosts: no interactive prompts, ever; dry-run default for mutations; structured exit codes; human and --json output. Host keys are pinned trust-on-first-use.",
+          "state": "working",
+          "state_note": "23 tests plus CLI integration tests; the README documents the v0.1 limits and the untested live-sshd path.",
           "category": "cli-tool"
         },
         {
           "name": "session-rc",
           "description": "Thin CLI to remote-control one exact live Hermes gateway session from a phone",
           "language": "Rust",
-          "url": null,
-          "stars": null,
-          "local": true,
+          "url": "https://github.com/wesleymatosdev/session-rc",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Thin CLI to remote-control one exact live Hermes gateway session from a phone — via Tailscale SSH/termux, or any shell with network access to the gateway. A v0 slice of the \"control the live coordinator from my phone\" idea.",
+          "state": "v0 — working",
+          "state_note": "The Tailscale path is documented in the README as not yet wired up.",
           "category": "cli-tool"
         },
         {
@@ -129,33 +231,72 @@
           "url": "https://github.com/wesleymatosdev/set-all-gists-to-private",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "cli-tool"
         },
         {
-          "name": "tmux-axi",
-          "description": "Small Rust CLI that wraps the tmux multiplexer with AXI discipline",
+          "name": "terminal-axi",
+          "description": "Agent-ergonomic terminal session control — one Rust binary, one JSON contract, no daemon; run foreground or spawn detached and poll",
           "language": "Rust",
-          "url": null,
-          "stars": null,
-          "local": true,
+          "url": "https://github.com/wesleymatosdev/terminal-axi",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Agent-ergonomic terminal session control: one small Rust binary, one JSON contract, no daemon. Run a command in the foreground, or spawn it detached and poll it like a real background session.",
+          "state": "working",
+          "state_note": null,
           "category": "cli-tool"
         },
         {
           "name": "unfit-rs",
-          "description": "unf.it review tool — Rust rewrite: local-first visual review hub for iterating on websites with element-scoped feedback",
+          "description": "Proof of concept, unmaintained — local-first visual review hub in Rust/axum (unf.it); the README recommends Lavish instead",
           "language": "Rust",
           "url": "https://github.com/wesleymatosdev/unfit-rs",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Rust/axum rewrite of the unf.it review hub: local-first visual review of websites with element-scoped feedback, comment threads, and SQLite storage.",
+          "state": "PoC — unmaintained",
+          "state_note": "Superseded; the README recommends Lavish instead.",
           "category": "cli-tool"
         },
         {
           "name": "xcap-recorder",
-          "description": "Cross-platform screen recorder in Rust using xcap — records every display to a separate H.264 MP4 via FFmpeg",
+          "description": "Screen recorder in Rust using xcap — records every connected display to a separate H.264 MP4 via FFmpeg",
           "language": "Rust",
-          "url": null,
-          "stars": null,
-          "local": true,
+          "url": "https://github.com/wesleymatosdev/xcap-recorder",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Records every connected display into its own H.264 MP4 through FFmpeg, built on the xcap capture library.",
+          "state": "working — macOS only",
+          "state_note": "The FFmpeg encoder uses macOS's VideoToolbox (h264_videotoolbox) with no fallback, so recording is macOS-only today even though the capture core isn't platform-bound.",
+          "category": "cli-tool"
+        },
+        {
+          "name": "zcode-axi",
+          "description": "Machine-friendly control plane around the zcode runtime — deterministic parseable output, documented exit-code contract, never prompts",
+          "language": "Rust",
+          "url": "https://github.com/wesleymatosdev/zcode-axi",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Machine-friendly control plane around the zcode runtime: never prompts, never opens the TUI, never touches login state. Deterministic, parseable output only — compact one-line records by default, --json for whole documents, --pretty for humans — with a documented exit-code contract for machine callers.",
+          "state": "active",
+          "state_note": null,
           "category": "cli-tool"
         }
       ]
@@ -172,6 +313,12 @@
           "url": "https://github.com/wesleymatosdev/console-art",
           "stars": null,
           "local": false,
+          "public": false,
+          "site": null,
+          "full": true,
+          "purpose": "Renders colored ASCII art safely in the browser console, chunking rows so no single console.log exceeds the %c specifier cap. Unit tests plus a browser-proof page and Bun leak-threshold tests.",
+          "state": "working",
+          "state_note": "Source lives in a private repo, so there is no link here; the npm/JSR package named in its README was never published.",
           "category": "library"
         },
         {
@@ -181,6 +328,12 @@
           "url": "https://github.com/wesleymatosdev/deno-data-structures",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "library"
         },
         {
@@ -190,6 +343,12 @@
           "url": "https://github.com/wesleymatosdev/hermes-agent-rs",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Composable Rust libraries and agent-facing tools for integrating with and orchestrating Hermes Agent. Today that is the typed API client hermes-client with HMAC webhook support; the README's status table honestly marks the orchestrator and remaining crates as research or planned.",
+          "state": "v0.1 — hermes-client only",
+          "state_note": null,
           "category": "library"
         },
         {
@@ -199,6 +358,12 @@
           "url": "https://github.com/wesleymatosdev/sort-numbers",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "library"
         }
       ]
@@ -215,6 +380,12 @@
           "url": "https://github.com/wesleymatosdev/aux-bench",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": true,
+          "purpose": "Benchmarks local Ollama models for Hermes auxiliary task slots — title generation, compression, curator, MCP, web extraction — scoring measured behavior (such as empty-content failures) instead of vibes. Ships with a REPRODUCING.md and committed run artifacts.",
+          "state": "working PoC",
+          "state_note": "14 result artifacts from real runs are committed under results/.",
           "category": "benchmark"
         }
       ]
@@ -231,6 +402,12 @@
           "url": "https://github.com/wesleymatosdev/bela-portfolio",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "website"
         },
         {
@@ -240,6 +417,12 @@
           "url": null,
           "stars": null,
           "local": true,
+          "public": false,
+          "site": "https://blog.wesleymatos.dev",
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "website"
         },
         {
@@ -249,6 +432,27 @@
           "url": "https://github.com/wesleymatosdev/demo",
           "stars": null,
           "local": false,
+          "public": false,
+          "site": "https://demo.wesleymatos.dev",
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
+          "category": "website"
+        },
+        {
+          "name": "oss-site",
+          "description": "This catalog — source for oss.wesleymatos.dev; a hand-written static page fed by scripts/collect.py",
+          "language": "HTML",
+          "url": "https://github.com/wesleymatosdev/oss-site",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "website"
         },
         {
@@ -258,6 +462,12 @@
           "url": "https://github.com/wesleymatosdev/simulador-de-prova",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "website"
         },
         {
@@ -267,15 +477,12 @@
           "url": "https://github.com/wesleymatosdev/unfit",
           "stars": null,
           "local": false,
-          "category": "website"
-        },
-        {
-          "name": "unfit-madeline",
-          "description": "unfit review-hub instance pairing a Python server with unfit-sdk.js",
-          "language": "Python",
-          "url": "https://github.com/wesleymatosdev/unfit-madeline",
-          "stars": null,
-          "local": false,
+          "public": false,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "website"
         },
         {
@@ -285,6 +492,27 @@
           "url": "https://github.com/wesleymatosdev/website",
           "stars": null,
           "local": false,
+          "public": false,
+          "site": "https://wesleymatos.dev",
+          "full": true,
+          "purpose": "wesleymatos.dev itself — the hand-written nebula/starfield home page whose design language this catalog shares. The repository is private, so there is no repo link; the live site is linked instead.",
+          "state": "working",
+          "state_note": null,
+          "category": "website"
+        },
+        {
+          "name": "wm-brand",
+          "description": "Design brief, tokens, and artifact previews for the wesleymatos.dev property family (HOUSE-STYLE.md defines the nebula language this site follows)",
+          "language": null,
+          "url": null,
+          "stars": null,
+          "local": true,
+          "public": false,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "website"
         }
       ]
@@ -301,6 +529,12 @@
           "url": "https://github.com/wesleymatosdev/advent-of-code-2023",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -310,6 +544,12 @@
           "url": "https://github.com/wesleymatosdev/aoc-2024-in-deno",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -319,6 +559,12 @@
           "url": "https://github.com/wesleymatosdev/boilerplate",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -328,15 +574,27 @@
           "url": "https://github.com/wesleymatosdev/bookstore-api",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
           "name": "brainrs",
           "description": "Backlog spec for a Rust MEMORY_VERBS v1 server, measured against a running gbrain instance",
           "language": "Markdown",
-          "url": null,
-          "stars": null,
-          "local": true,
+          "url": "https://github.com/wesleymatosdev/brainrs",
+          "stars": 0,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -346,6 +604,12 @@
           "url": "https://github.com/wesleymatosdev/codespaces-test",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -355,6 +619,12 @@
           "url": "https://github.com/wesleymatosdev/data-structures-and-algorithms",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -364,6 +634,12 @@
           "url": null,
           "stars": null,
           "local": true,
+          "public": false,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -373,6 +649,12 @@
           "url": "https://github.com/wesleymatosdev/exercism-rust",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -382,6 +664,12 @@
           "url": null,
           "stars": null,
           "local": true,
+          "public": false,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -391,6 +679,12 @@
           "url": "https://github.com/wesleymatosdev/go-data-structures",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -400,6 +694,12 @@
           "url": "https://github.com/wesleymatosdev/go-movies-crud",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -409,6 +709,12 @@
           "url": "https://github.com/wesleymatosdev/hackerrank-with-go",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -418,6 +724,12 @@
           "url": "https://github.com/wesleymatosdev/hangman-game",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -427,6 +739,12 @@
           "url": "https://github.com/wesleymatosdev/kafka-ecommerce",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -436,6 +754,12 @@
           "url": "https://github.com/wesleymatosdev/kafka-with-java",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -445,6 +769,12 @@
           "url": "https://github.com/wesleymatosdev/learning-rust",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -454,6 +784,12 @@
           "url": "https://github.com/wesleymatosdev/nu-auth",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -463,6 +799,12 @@
           "url": "https://github.com/wesleymatosdev/ologbonowiwii",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -472,6 +814,12 @@
           "url": "https://github.com/wesleymatosdev/pi-hole-iac",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -481,6 +829,12 @@
           "url": "https://github.com/wesleymatosdev/poc-excel-download",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -490,6 +844,12 @@
           "url": "https://github.com/wesleymatosdev/proto-buffers",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -499,6 +859,12 @@
           "url": "https://github.com/wesleymatosdev/rinha-de-backend-rust",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -508,6 +874,12 @@
           "url": "https://github.com/wesleymatosdev/rinha-rust-warp",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -517,6 +889,12 @@
           "url": "https://github.com/wesleymatosdev/schedule-whatsapp-message-droideer",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -526,6 +904,12 @@
           "url": "https://github.com/wesleymatosdev/simple-go-server",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -535,6 +919,12 @@
           "url": "https://github.com/wesleymatosdev/simple-node-demonstration",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -544,6 +934,12 @@
           "url": null,
           "stars": null,
           "local": true,
+          "public": false,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -553,6 +949,12 @@
           "url": "https://github.com/wesleymatosdev/social-assets",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -562,6 +964,12 @@
           "url": null,
           "stars": null,
           "local": true,
+          "public": false,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -571,6 +979,12 @@
           "url": "https://github.com/wesleymatosdev/spinning-cube",
           "stars": 3,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -580,6 +994,12 @@
           "url": "https://github.com/wesleymatosdev/taller-interview",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -589,6 +1009,12 @@
           "url": "https://github.com/wesleymatosdev/the-divination-game",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -598,6 +1024,12 @@
           "url": "https://github.com/wesleymatosdev/the-hangman-game",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -607,6 +1039,12 @@
           "url": "https://github.com/wesleymatosdev/toggl-challenge",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -616,6 +1054,12 @@
           "url": "https://github.com/wesleymatosdev/typescript-blockchain-implementation",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -625,6 +1069,12 @@
           "url": "https://github.com/wesleymatosdev/voxy-challenge",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -634,6 +1084,12 @@
           "url": "https://github.com/wesleymatosdev/wasm-example",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -643,6 +1099,12 @@
           "url": "https://github.com/wesleymatosdev/web-rtc-video-call",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         },
         {
@@ -652,31 +1114,49 @@
           "url": "https://github.com/wesleymatosdev/what-is-the-weekday",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "experiment"
         }
       ]
     },
     {
       "id": "maintained-forks",
-      "title": "Maintained forks",
-      "blurb": "Forks kept alive with real work on them.",
+      "title": "Forks",
+      "blurb": "Forks of upstream projects, published as-is — no local changes yet.",
       "projects": [
         {
           "name": "colibri",
-          "description": "Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk",
+          "description": "Fork of JustVugg/colibri — frontier MoE models on commodity hardware, pure C, experts streamed from disk (upstream project; no local changes yet)",
           "language": "C",
           "url": "https://github.com/wesleymatos-bot/colibri",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "maintained-forks"
         },
         {
           "name": "gnhf",
-          "description": "Before I go to bed, I tell my agents: good night, have fun",
+          "description": "Fork of kunchenguid/gnhf — \"good night, have fun\": scheduled overnight agent runs (upstream project; no local changes yet)",
           "language": null,
           "url": "https://github.com/wesleymatos-bot/gnhf",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "maintained-forks"
         }
       ]
@@ -693,6 +1173,12 @@
           "url": "https://github.com/wesleymatosdev/deskflow-pentesting",
           "stars": 0,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "contributions"
         },
         {
@@ -702,6 +1188,27 @@
           "url": "https://github.com/ClaudioDrews/memory-os",
           "stars": null,
           "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
+          "category": "contributions"
+        },
+        {
+          "name": "zcode-cli",
+          "description": "Upstream zcode-cli — number-key quick-select for choice dialogs merged via PR #136; auto permission classifier under review as PR #137",
+          "language": "Rust",
+          "url": "https://github.com/kingsword09/zcode-cli",
+          "stars": null,
+          "local": false,
+          "public": true,
+          "site": null,
+          "full": false,
+          "purpose": null,
+          "state": null,
+          "state_note": null,
           "category": "contributions"
         }
       ]

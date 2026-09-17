@@ -45,15 +45,6 @@ canvas[data-starfield] { position: fixed; inset: 0; z-index: 0; pointer-events: 
 
 .site-header { animation: arrive 0.9s ease-out both; }
 
-.back-link {
-  display: inline-block;
-  color: var(--ink-dim);
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.2s;
-}
-.back-link:hover { color: var(--ink); }
-
 .site-title {
   margin: 18px 0 6px;
   font-size: clamp(2rem, 6vw, 3.1rem);
@@ -243,4 +234,108 @@ canvas[data-starfield] { position: fixed; inset: 0; z-index: 0; pointer-events: 
   .page { padding: 28px 16px 56px; }
   .cards { grid-template-columns: 1fr; }
   .group { margin-top: 36px; }
+}
+
+/* ---------- full sections ---------- */
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.card-full { padding: 22px 22px 18px; border-radius: 16px; }
+.card-full .card-name { font-size: 1.25rem; }
+
+.card-purpose {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  max-width: 76ch;
+}
+
+.card-state {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.badge.state {
+  border-color: rgba(100, 120, 255, 0.45);
+  background: rgba(100, 120, 255, 0.12);
+}
+
+.state-note { color: var(--ink-faint); font-size: 0.8rem; }
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.star-btn, .site-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(100, 120, 255, 0.45);
+  background: rgba(100, 120, 255, 0.1);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+.star-btn:hover, .site-btn:hover {
+  border-color: var(--card-border-hover);
+  color: #ffb6e6;
+  background: rgba(100, 120, 255, 0.16);
+}
+
+@media (max-width: 430px) {
+  .card-actions { margin-left: 0; }
+}
+
+/* wm-nav:begin — shared wesleymatos.dev nav; sync via oss-site scripts/sync-nav.py */
+:root {
+  --wm-nav-ink: rgba(178, 203, 246, 0.8);
+  --wm-nav-accent: #ffb6e6;
+  --wm-nav-hairline: rgba(184, 170, 255, 0.22);
+  --wm-nav-accent-hairline: rgba(255, 182, 230, 0.5);
+}
+.site-nav {
+  position: fixed; top: 22px; right: 26px; z-index: 3;
+  display: flex; gap: 20px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.site-nav a {
+  color: var(--wm-nav-ink, rgba(178, 203, 246, 0.8));
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(130, 73, 169, 0.6);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--wm-nav-hairline, rgba(184, 170, 255, 0.22));
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.site-nav a:hover {
+  color: var(--wm-nav-accent, #ffb6e6);
+  border-bottom-color: var(--wm-nav-accent-hairline, rgba(255, 182, 230, 0.5));
+}
+.site-nav a[aria-current="page"] {
+  color: var(--wm-nav-accent, #ffb6e6);
+  border-bottom-color: var(--wm-nav-accent-hairline, rgba(255, 182, 230, 0.5));
+}
+@media (prefers-reduced-motion: reduce) { .site-nav a { transition: none; } }
+/* wm-nav:end */
+
+/* oss-site token mapping for the shared nav — kept OUTSIDE the sentinels on
+   purpose: scripts/sync-nav.py only rewrites the block above. */
+:root {
+  --wm-nav-ink: var(--ink);
+  --wm-nav-accent: #ffb6e6;
+  --wm-nav-hairline: var(--card-border);
 }
