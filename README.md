@@ -1,8 +1,10 @@
 # oss-site
 
-Source for **[oss.wesleymatos.dev](https://oss.wesleymatos.dev)** — the public catalog of
+Source for **[oss.wmatos.dev](https://oss.wmatos.dev)** — the public catalog of
 Wesley's open-source work. Sits next to the main site at
-[wesleymatos.dev](https://wesleymatos.dev) and shares its dark nebula/starfield look.
+[wmatos.dev](https://wmatos.dev) and shares its paper-and-sage canopy design
+(white background, Fraunces serif, sage-green botanical header via the shared
+package at `https://art.wmatos.dev/shared/`).
 
 ## What's here
 
@@ -10,7 +12,7 @@ Wesley's open-source work. Sits next to the main site at
 data/projects.json   source of truth — every project, grouped and described
 scripts/collect.py   regenerates the data files (see below)
 www/                 static site — no build step or npm
-CNAME                custom domain: oss.wesleymatos.dev
+CNAME                custom domain: oss.wmatos.dev
 .github/workflows/deploy.yml   deploys www/ to GitHub Pages on push to main
 ```
 
@@ -53,16 +55,17 @@ Projects marked `full` render as stacked full-width sections with their
 `purpose`/`state`/`state_note` copy; the rest stay compact grid rows. Both
 shapes share the `card` class, so the live filter covers both.
 
-## Shared site nav
+## Canopy header
 
-`www/index.html` loads the shared component immediately before `</body>`:
-
-```html
-<script src="https://wesleymatos.dev/wm-nav.js" data-current="Open Source"></script>
-```
-
-The component owns the navbar markup and styles; pass `data-current="Open Source"`
-to mark the OSS link as the current page. Do not add local `wm-nav` markup or CSS.
+`www/index.html` carries the shared canopy header (brand chip + nav chips) per
+the family-wide contract: `canopy.css` from
+`https://art.wmatos.dev/shared/canopy.css`, a
+`<header class="canopy-header" data-canopy-intro>` element, and the deferred
+`canopy-data.js` + `canopy-intro.js` scripts from the same `/shared/` path.
+The intro plays the WM monogram bloom + canopy growth compressed to ~1.5 s on
+first load per tab session (sessionStorage guard); `prefers-reduced-motion`
+gets the settled canopy immediately. Do not add local header markup or canvas
+code — the shared package owns them.
 
 ## Regenerating the data
 
@@ -92,5 +95,5 @@ No build step, no dependencies.
 
 Push to `main` — the GitHub Actions workflow uploads `www/` and deploys it to
 GitHub Pages. The `CNAME` files (repo root and `www/`) pin the custom domain
-`oss.wesleymatos.dev`; point the DNS `CNAME` at the Pages endpoints once in
+`oss.wmatos.dev`; point the DNS `CNAME` at the Pages endpoints once in
 repo settings.
