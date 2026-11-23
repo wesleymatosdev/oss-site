@@ -36,6 +36,17 @@ body {
   padding: 28px 20px 72px;
 }
 
+/* ---------- canopy header ---------- */
+
+/* The brand chip carries the page h1 — normalize it to the chip typography
+ * (the shared package styles .canopy-brand as an anchor). */
+.canopy-brand h1 {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
 /* ---------- lede ---------- */
 
 .site-header { max-width: 720px; }
