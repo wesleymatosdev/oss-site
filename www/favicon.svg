@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <radialGradient id="glow" cx="50%" cy="45%" r="60%">
-      <stop offset="0%" stop-color="#b4d2ff"/>
-      <stop offset="55%" stop-color="#8249a9"/>
-      <stop offset="100%" stop-color="#1a0f2e"/>
-    </radialGradient>
-  </defs>
-  <rect width="32" height="32" rx="7" fill="#0a0716"/>
-  <path d="M16 5l2.7 7.6 8.1.5-6.3 5.1 2.1 7.8-6.6-4.5-6.6 4.5 2.1-7.8-6.3-5.1 8.1-.5z" fill="url(#glow)"/>
+  <!-- paper & sage mark: leaf-green tile, paper-white stem, sage + paper leaf pairs -->
+  <rect width="32" height="32" rx="7" fill="#3f6b2e"/>
+  <path d="M16 26V8" stroke="#f6f8f3" stroke-width="2" stroke-linecap="round"/>
+  <path d="M16 19c-3.4-.2-6-2.2-6.8-5.8 3.4.2 6 2.2 6.8 5.8z" fill="#7a9a66"/>
+  <path d="M16 14.5c3.4-.2 6-2.2 6.8-5.8-3.4.2-6 2.2-6.8 5.8z" fill="#f6f8f3"/>
+  <path d="M16 24c3.4-.2 6-2.2 6.8-5.8-3.4.2-6 2.2-6.8 5.8z" fill="#7a9a66"/>
+  <path d="M16 19c-3.4-.2-6-2.2-6.8-5.8" fill="none" stroke="#f6f8f3" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M16 14.5c3.4-.2 6-2.2 6.8-5.8" fill="none" stroke="#7a9a66" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M16 24c3.4-.2 6-2.2 6.8-5.8" fill="none" stroke="#f6f8f3" stroke-width="1.4" stroke-linecap="round"/>
 </svg>
